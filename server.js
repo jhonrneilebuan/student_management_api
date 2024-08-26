@@ -18,5 +18,13 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 // Use routes
 app.use('/api', studentRoutes); // Register routes for student API
 
+app.get('/', (req, res) => {
+    res.redirect('/api/students');
+  });
+
+
 // Server listening
 app.listen(process.env.PORT, () => console.log(`Server running on http://localhost:${process.env.PORT}`));
+
+
+
